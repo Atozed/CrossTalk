@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{341B3D3C-01CC-4A43-8FAC-9D66ADBECD44}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CustomClass\Left\CustomClass.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Encryption\Encryption.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="StringBuilder\StringBuilderTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WpfDemo\WPFDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CustomClass">
+        <MSBuild Projects="CustomClass\Left\CustomClass.dproj"/>
+    </Target>
+    <Target Name="CustomClass:Clean">
+        <MSBuild Projects="CustomClass\Left\CustomClass.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomClass:Make">
+        <MSBuild Projects="CustomClass\Left\CustomClass.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Encryption">
+        <MSBuild Projects="Encryption\Encryption.dproj"/>
+    </Target>
+    <Target Name="Encryption:Clean">
+        <MSBuild Projects="Encryption\Encryption.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Encryption:Make">
+        <MSBuild Projects="Encryption\Encryption.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StringBuilderTest">
+        <MSBuild Projects="StringBuilder\StringBuilderTest.dproj"/>
+    </Target>
+    <Target Name="StringBuilderTest:Clean">
+        <MSBuild Projects="StringBuilder\StringBuilderTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StringBuilderTest:Make">
+        <MSBuild Projects="StringBuilder\StringBuilderTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="WPFDemo">
+        <MSBuild Projects="WpfDemo\WPFDemo.dproj"/>
+    </Target>
+    <Target Name="WPFDemo:Clean">
+        <MSBuild Projects="WpfDemo\WPFDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WPFDemo:Make">
+        <MSBuild Projects="WpfDemo\WPFDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CustomClass;Encryption;StringBuilderTest;WPFDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CustomClass:Clean;Encryption:Clean;StringBuilderTest:Clean;WPFDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CustomClass:Make;Encryption:Make;StringBuilderTest:Make;WPFDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

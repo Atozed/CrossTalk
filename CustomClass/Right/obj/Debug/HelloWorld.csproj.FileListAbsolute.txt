@@ -1,0 +1,5 @@
+D:\Source\CrossTalk\source\bin\HelloWorld.dll
+D:\Source\CrossTalk\source\bin\HelloWorld.pdb
+D:\Source\CrossTalk Demos\CustomClass\Right\obj\Debug\HelloWorld.csprojResolveAssemblyReference.cache
+D:\Source\CrossTalk Demos\CustomClass\Right\obj\Debug\HelloWorld.dll
+D:\Source\CrossTalk Demos\CustomClass\Right\obj\Debug\HelloWorld.pdb
